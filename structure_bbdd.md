@@ -1,68 +1,106 @@
-# Diagrama Entidad-Relación para Gesliga
+# Diagrama Entidad-Relación para Gesliga1
 
 ## Entidades y Atributos
 
 ### Usuarios
-- `id_usuario` (PK)
+- `id_user` (PK)
+- `rol`
 - `first_name`
 - `second_name`
 - `first_lastname`
 - `second_lastname`
-- `birthday`
+- `photo`
+- `gender`
+- `dni`
+- `birthdate`
+- `nationality`
+- `phone`
+- `date_register`
+- `date_last_update`
 - `email`
-- `contraseña`
-- `rol`
+- `password`
+- `status`
 
 ### Clubs
 - `id_club` (PK)
-- `nombre`
-- `direccion`
+- `name`
+- `name_abb`
+- `name_large`
+- `fundation`
+- `president`
+- `shield`
+- `shield_black`
+- `shield_white`
 - `delegado_id` (FK)
+- `status`
 
 ### Jugadores
-- `id_jugador` (PK)
-- `nombre`
-- `fecha_nacimiento`
-- `genero`
+- `id_player` (PK)
+- `first_name`
+- `second_name`
+- `first_lastname`
+- `second_lastname`
+- `photo`
+- `gender`
+- `dni`
+- `birthdate`
+- `nationality`
+- `position`
+- `date_register`
+- `date_last_update`
 - `club_id` (FK)
+- `status`
 
 ### Sanciones
-- `id_sancion` (PK)
-- `jugador_id` (FK)
-- `competencia`
-- `tipo`
-- `fecha_inicio`
-- `fecha_fin`
+- `id_sanction` (PK)
+- `id_player` (FK)
+- `competence`
+- `stage`
+- `description`
+- `games`
+- `date_init`
+- `date_finish`
 
 ### Planillas de Juego
-- `id_planilla` (PK)
-- `fecha`
-- `competencia`
-- `club_id` (FK)
+- `id_spreadsheet` (PK)
+- `date`
+- `competence`
+- `stage`
+- `date`
+- `local`
+- `visit`
+- `stadium`
+- `players`
+- `id_club` (FK)
+- `status`
 
 ### Transferencias
-- `id_transferencia` (PK)
-- `jugador_id` (FK)
-- `club_origen_id` (FK)
-- `club_destino_id` (FK)
-- `fecha_inicio`
-- `fecha_fin`
+- `id_transfer` (PK)
+- `id_player` (FK)
+- `id_origin_club` (FK)
+- `id_destinity_club` (FK)
+- `date`
+- `amount`
+- `response_league`
+- `status`
 
 ### Historial de Sanciones
-- `id_historial_sancion` (PK)
-- `jugador_id` (FK)
-- `competencia`
-- `tipo`
-- `fecha_inicio`
-- `fecha_fin`
+- `id_sanctions_history` (PK)
+- `id_player` (FK)
+- `competence`
+- `stage`
+- `description`
+- `games`
+- `date_init`
+- `date_finish`
 
 ### Historial de Transferencias
-- `id_historial_transferencia` (PK)
-- `jugador_id` (FK)
-- `club_origen_id` (FK)
-- `club_destino_id` (FK)
-- `fecha_inicio`
-- `fecha_fin`
+- `id_transfers_history` (PK)
+- `id_player` (FK)
+- `id_origin_club` (FK)
+- `date_init`
+- `date_finish`
+- `id_destinity_club` (FK)
 
 ## Relaciones
 
