@@ -118,4 +118,4 @@
 - **Transferencias** tiene una relación de uno a uno con **Clubs** para `club_origen_id` y `club_destino_id`.
 - **Historial de Transferencias** tiene una relación de uno a uno con **Clubs** para `club_origen_id` y `club_destino_id`.
 
-Este esquema representa de manera estructurada las entidades, atributos y relaciones del sistema Gesliga. Puedes usar este formato en un archivo Markdown (`.md`) para documentar tu proyecto de manera clara y concisa.
+Este esquema representa de manera estructurada las entidades, atributos y relaciones del sistema Gesliga.
