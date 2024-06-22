@@ -1,4 +1,4 @@
-# Diagrama Entidad-Relación para Gesliga1
+# Diagrama Entidad-Relación para Gesliga
 
 ## Entidades y Atributos
 
@@ -60,6 +60,7 @@
 - `games`
 - `date_init`
 - `date_finish`
+- `status`
 
 ### Planillas de Juego
 - `id_spreadsheet` (PK)
@@ -93,6 +94,7 @@
 - `games`
 - `date_init`
 - `date_finish`
+- `status`
 
 ### Historial de Transferencias
 - `id_transfers_history` (PK)
@@ -101,6 +103,7 @@
 - `date_init`
 - `date_finish`
 - `id_destinity_club` (FK)
+- `status`
 
 ## Relaciones
 
