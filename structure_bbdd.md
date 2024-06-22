@@ -4,7 +4,11 @@
 
 ### Usuarios
 - `id_usuario` (PK)
-- `nombre`
+- `first_name`
+- `second_name`
+- `first_lastname`
+- `second_lastname`
+- `birthday`
 - `email`
 - `contraseña`
 - `rol`
