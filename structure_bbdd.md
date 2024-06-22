@@ -2,7 +2,7 @@
 
 ## Entidades y Atributos
 
-### Usuarios
+### User
 - `id_user` (PK)
 - `rol`
 - `first_name`
@@ -21,7 +21,7 @@
 - `password`
 - `status`
 
-### Clubs
+### Club
 - `id_club` (PK)
 - `name`
 - `name_abb`
@@ -34,7 +34,7 @@
 - `delegado_id` (FK)
 - `status`
 
-### Jugadores
+### Player
 - `id_player` (PK)
 - `first_name`
 - `second_name`
@@ -51,7 +51,7 @@
 - `club_id` (FK)
 - `status`
 
-### Sanciones
+### Sanction
 - `id_sanction` (PK)
 - `id_player` (FK)
 - `competence`
@@ -62,7 +62,7 @@
 - `date_finish`
 - `status`
 
-### Planillas de Juego
+### Spreadsheet
 - `id_spreadsheet` (PK)
 - `date`
 - `competence`
@@ -75,7 +75,7 @@
 - `id_club` (FK)
 - `status`
 
-### Transferencias
+### Transfer
 - `id_transfer` (PK)
 - `id_player` (FK)
 - `id_origin_club` (FK)
@@ -85,24 +85,16 @@
 - `response_league`
 - `status`
 
-### Historial de Sanciones
+### Sanctions_history
 - `id_sanctions_history` (PK)
 - `id_player` (FK)
-- `competence`
-- `stage`
-- `description`
-- `games`
-- `date_init`
-- `date_finish`
+- `sanctions`
 - `status`
 
-### Historial de Transferencias
+### Transfers_history
 - `id_transfers_history` (PK)
 - `id_player` (FK)
-- `id_origin_club` (FK)
-- `date_init`
-- `date_finish`
-- `id_destinity_club` (FK)
+- `transfers`
 - `status`
 
 ## Relaciones
@@ -116,6 +108,6 @@
 - **Jugadores** tiene una relación de uno a muchos con **Historial de Sanciones**.
 - **Jugadores** tiene una relación de uno a muchos con **Historial de Transferencias**.
 - **Transferencias** tiene una relación de uno a uno con **Clubs** para `club_origen_id` y `club_destino_id`.
-- **Historial de Transferencias** tiene una relación de uno a uno con **Clubs** para `club_origen_id` y `club_destino_id`.
+- **Historial de Transferencias** tiene una relación de uno a muchos con **Jugadores**.
 
 Este esquema representa de manera estructurada las entidades, atributos y relaciones del sistema Gesliga.
