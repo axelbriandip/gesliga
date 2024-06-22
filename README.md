@@ -1,62 +1,96 @@
 # Gesliga
 
-Gesliga es una aplicación web diseñada para la gestión integral de derechos de pases y sanciones de jugadores en una liga deportiva. Esta plataforma permite a los clubes administrar sus jugadores, generar planillas de juego, gestionar sanciones y realizar transferencias de jugadores de manera eficiente y centralizada.
+## Descripción
+Gesliga es una aplicación web diseñada para la gestión integral de derechos de pases de jugadores en ligas deportivas. Facilita la administración de clubes, categorías, jugadores, sanciones y la generación de planillas de juego, optimizando el proceso organizativo dentro de la liga.
 
-## Características Principales
+## Funcionalidades Principales
+- Autenticación segura con gestión de roles para administradores, delegados de clubes y el tribunal de disciplina.
+- Administración completa de clubes, incluyendo asignación de delegados y gestión de datos.
+- Registro detallado de jugadores con historial de transferencias y sanciones.
+- Creación y gestión de categorías y equipos asociados a clubes específicos.
+- Generación automatizada de planillas de juego con validación de jugadores elegibles.
+- Seguimiento y registro de sanciones disciplinarias con restricciones automáticas en participación.
+- Interfaz administrativa intuitiva para gestión de usuarios, datos y generación de informes.
 
-- **Gestión de Usuarios y Roles**
-  - Registro y autenticación de usuarios.
-  - Asignación de roles (Admin, Delegado, Tribunal de Disciplina, Invitado).
-  - Gestión de permisos según los roles definidos.
+## Roles, Permisos y Alcances del Proyecto Gesliga
 
-- **Gestión de Clubes y Jugadores**
-  - CRUD de clubes y jugadores.
-  - Asociación de jugadores a clubes.
-  - Solicitudes de modificaciones por parte de delegados, sujetas a aprobación por la liga.
-  - Mantenimiento de historial de sanciones y transferencias de jugadores.
+### Roles de Usuario
 
-- **Gestión de Sanciones**
-  - Registro de sanciones por competencia (Torneo de Liga, Copa).
-  - Definición de tipo de sanción (por partidos o tiempo).
-  - Inhabilitación automática de jugadores sancionados según la competencia.
-  - Gestión de sanciones por el Tribunal de Disciplina.
+#### Administrador
+- **Descripción:** Usuario con acceso completo a todas las funcionalidades de Gesliga.
+- **Permisos:**
+  - Gestión de usuarios: creación, edición y eliminación de cuentas de usuario.
+  - Administración de clubes: alta, modificación y eliminación de clubes.
+  - Asignación de roles y permisos a otros usuarios.
+  - Acceso completo a la gestión de jugadores, categorías y equipos.
+  - Generación de informes y estadísticas del sistema.
+  - Gestión de sanciones y planillas de juego.
 
-- **Generación de Planillas de Juego**
-  - Filtrado de jugadores por género y edad.
-  - Inclusión de jugadores de categorías inferiores si la edad lo permite.
-  - Generación de planillas de juego en formato descargable.
+#### Delegado de Club
+- **Descripción:** Representante autorizado de un club dentro de Gesliga.
+- **Permisos:**
+  - Gestión del club: edición de datos del club y asignación de jugadores.
+  - Creación y edición de planillas de juego para los equipos del club.
+  - Seguimiento de sanciones aplicadas a jugadores del club.
+  - Visualización de informes específicos de actividades del club.
 
-- **Transferencias y Movimientos de Jugadores**
-  - Solicitudes de transferencias interclubes por parte de delegados.
-  - Derecho de pase con duración de 2 años, con necesidad de renovación.
-  - Liberación de jugadores y cesión a préstamo (6 o 12 meses).
+#### Tribunal de Disciplina
+- **Descripción:** Entidad encargada de la administración y aplicación de sanciones disciplinarias.
+- **Permisos:**
+  - Registro y gestión de sanciones: imposición y seguimiento de sanciones a jugadores.
+  - Validación y aprobación de solicitudes relacionadas con sanciones y transferencias.
+  - Acceso a registros históricos de sanciones y transferencias para auditorías.
 
-- **Historial y Seguimiento**
-  - Historial completo de sanciones y transferencias.
-  - Seguimiento del derecho de pase y estado de jugadores.
+### Alcances por Funcionalidad
 
-- **Notificaciones y Alertas**
-  - Notificaciones sobre el estado de solicitudes.
-  - Alertas sobre renovación de derechos de pase.
-  - Informes de jugadores sancionados.
+1. **Autenticación y Gestión de Usuarios:**
+   - **Descripción:** Sistema de registro, inicio de sesión y gestión de usuarios con roles diferenciados.
+   - **Alcance:** Implementación de JWT para asegurar sesiones seguras y gestión centralizada de cuentas.
 
-- **Acceso Invitado**
-  - Visualización de información pública:
-    - Listado de clubes y sus jugadores.
-    - Listas de buena fe.
-    - Planillas de juego.
-  - Acceso restringido a funcionalidades de modificación y datos sensibles.
+2. **Administración de Clubes:**
+   - **Descripción:** Gestión de datos de clubes, incluyendo información básica y asignación de delegados.
+   - **Alcance:** Funcionalidad completa de CRUD para clubes con validaciones de integridad de datos.
 
-## Estructura del Proyecto
+3. **Gestión de Jugadores:**
+   - **Descripción:** Registro y seguimiento de jugadores, incluyendo transferencias entre clubes.
+   - **Alcance:** Mantenimiento de historial detallado de jugadores con actualizaciones automáticas de datos.
 
-- **Backend**
-  - Implementación de una API RESTful con Node.js y Express.
-  - Gestión de la base de datos con Sequelize y PostgreSQL.
+4. **Gestión de Categorías y Equipos:**
+   - **Descripción:** Definición y gestión de categorías de equipos y asignación a clubes.
+   - **Alcance:** Funcionalidades específicas para la creación y modificación de categorías y equipos dentro de la liga.
 
-- **Frontend**
-  - Interfaz de usuario desarrollada con React.
-  - Diseño responsivo y accesible para diferentes roles de usuarios.
+5. **Generación de Planillas de Juego:**
+   - **Descripción:** Creación de planillas de juego para partidos con criterios de elegibilidad y restricciones.
+   - **Alcance:** Validación automática de jugadores elegibles según sanciones activas y requisitos de competición.
 
-- **Base de Datos**
-  - Modelado de entidades y relaciones para la gestión de datos.
-  - Migraciones y seeders para la inicialización de datos.
+6. **Sistema de Sanciones:**
+   - **Descripción:** Registro y seguimiento de sanciones disciplinarias impuestas a jugadores.
+   - **Alcance:** Integración con otras funcionalidades para garantizar restricciones automáticas en participación según sanciones.
+
+7. **Historial de Sanciones y Transferencias:**
+   - **Descripción:** Mantenimiento de registros históricos detallados de sanciones y transferencias de jugadores.
+   - **Alcance:** Acceso a registros históricos para análisis, auditoría y seguimiento de eventos pasados.
+
+8. **Interfaz Administrativa y Seguridad:**
+   - **Descripción:** Panel administrativo intuitivo y seguro para la gestión eficiente de todas las funcionalidades.
+   - **Alcance:** Implementación de medidas de seguridad avanzadas y gestión de permisos para protección de datos sensibles.
+
+## Tecnologías Utilizadas
+
+### Frontend
+- **React.js:** Biblioteca JavaScript para construir interfaces de usuario. Permite la creación de componentes reutilizables que facilitan el desarrollo frontend modular y eficiente.
+- **HTML y CSS:** Lenguajes fundamentales para la estructura y diseño visual de la aplicación web, respectivamente.
+- **Bootstrap:** Framework de CSS para diseño responsive y componentes preestilizados que agilizan el desarrollo del frontend.
+
+### Backend
+- **Node.js:** Entorno de ejecución de JavaScript del lado del servidor, que utiliza un modelo de operaciones no bloqueantes y orientado a eventos para manejar múltiples solicitudes simultáneamente.
+- **Express.js:** Framework de aplicaciones web para Node.js que proporciona una capa delgada de características web y facilita la creación de API RESTful robustas y escalables.
+
+### Base de Datos
+- **PostgreSQL:** Sistema de gestión de bases de datos relacional de código abierto. Ofrece robustez, soporte para transacciones ACID, integridad referencial y escalabilidad, adecuado para aplicaciones que manejan datos complejos y relaciones entre entidades.
+
+### Autenticación y Autorización
+- **JSON Web Tokens (JWT):** Mecanismo seguro para la autenticación de usuarios mediante tokens que contienen información codificada y firmada digitalmente. Permite la verificación de identidad de usuarios y la gestión segura de sesiones.
+
+### Almacenamiento de Imágenes
+- **Amazon S3 (Simple Storage Service):** Servicio en la nube de Amazon Web Services (AWS) diseñado para almacenar y recuperar datos masivos. Ideal para almacenar imágenes y otros archivos estáticos utilizados en la aplicación.
