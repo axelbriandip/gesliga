@@ -25,7 +25,7 @@ const startServer = async () => {
         const DB_PORT = process.env.DB_PORT || 40001;
 
         // running app!
-        app.DB_PORT(DB_PORT, () => {
+        app.listen(DB_PORT, () => {
             console.log("Express app running in port ", DB_PORT);
         });
     } catch (err) {
