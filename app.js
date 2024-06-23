@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 
 // routers
+const { usersRouter } = require('./routes/users.routes');
 
 // controllers
 
@@ -20,6 +21,7 @@ app.use(helmet());
 app.use(compression());
 
 // define endpoints
+app.use('/api/v1/users', usersRouter);
 
 // global error handler
 

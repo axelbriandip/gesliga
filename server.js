@@ -22,11 +22,11 @@ const startServer = async () => {
         await db.sync();
 
         // set server to listen
-        const DB_PORT = process.env.DB_PORT || 40001;
+        const DB_PORT = process.env.DB_PORT || 4000;
 
         // running app!
         app.listen(DB_PORT, () => {
-            console.log("Express app running in port ", DB_PORT);
+            console.log("Express app running in port", DB_PORT);
         });
     } catch (err) {
         console.log(err);
