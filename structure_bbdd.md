@@ -160,15 +160,11 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
    - Un **Player** puede tener múltiples **Sanctions**.
    - Relación: 1 a N.
 
-6. **League - Match Sheet**
-   - Una **League** puede tener múltiples **Match Sheets**.
-   - Relación: 1 a N.
-
-7. **Club - Match Sheet**
+6. **Club - Match Sheet**
    - Un **Club** puede generar múltiples **Match Sheets**.
    - Relación: 1 a N.
 
-8. **Player - Transfer**
+7. **Player - Transfer**
    - Un **Player** puede tener múltiples **Transfers**.
    - Relación: 1 a N.
 
@@ -191,4 +187,3 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
 | discipline | Responsable de la disciplina dentro de la liga, encargado de aplicar y gestionar sanciones.  |
 | delegate   | Delegado de un club específico, con permisos para gestionar jugadores y planificar partidos. |
 | guest      | Acceso limitado para visualizar información pública, como resultados de partidos y tablas de posiciones. |
-
