@@ -2,6 +2,16 @@
 const { User } = require('../models/user.model');
 
 // controllers: user
+const getAllUsers = async(req, res, next) => {
+    const users = await User.findAll();
+
+    // 201 => success and a resource has been created
+    res.status(201).json({
+        status: 'success',
+        data: { users }
+    })
+}
+
 const createUser = async(req, res, next) => {
     // receive data
     const {
@@ -45,4 +55,7 @@ const createUser = async(req, res, next) => {
 };
 
 // export controllers
-module.exports = { createUser };
+module.exports = {
+    createUser,
+    getAllUsers
+};
