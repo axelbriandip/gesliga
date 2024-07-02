@@ -13,6 +13,7 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
 - **dni**: String
 - **dateOfBirth**: Date
 - **gender**: Enum (femenino/masculino/otro)
+- **phone**: String (URL)
 - **photo**: String (URL)
 - **email**: String
 - **password**: String
@@ -28,11 +29,10 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
 - **fullName**: String
 - **abbreviation**: String
 - **foundation**: Date
-- **legalInfo**: Object
 - **president**: String
-- **crest**: String (URL)
-- **crestWhite**: String (URL)
-- **crestBlack**: String (URL)
+- **shield**: String (URL)
+- **shieldWhite**: String (URL)
+- **shieldBlack**: String (URL)
 - **delegateId**: FK (User)
 - **players**: Array of FK (Player)
 - **createdAt**: Date
@@ -51,6 +51,9 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
 - **gender**: Enum (femenino/masculino/otro)
 - **position**: Enum
 - **photo**: String (URL)
+- **photoDniFront**: String (URL)
+- **photoDniReverse**: String (URL)
+- **photoMedicalCertificate**: String (URL)
 - **clubId**: FK (Club)
 - **createdAt**: Date
 - **updatedAt**: Date
@@ -130,9 +133,9 @@ Gesliga es una aplicación web diseñada para gestionar de manera eficiente los 
 - **id**: PK
 - **adminId**: FK (User)
 - **name**: String
-- **logo**: String (URL)
-- **logoWhite**: String (URL)
-- **logoBlack**: String (URL)
+- **shield**: String (URL)
+- **shieldWhite**: String (URL)
+- **shieldBlack**: String (URL)
 - **clubs**: Array of FK (Club)
 - **createdAt**: Date
 - **updatedAt**: Date
