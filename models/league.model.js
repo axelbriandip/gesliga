@@ -1,51 +1,35 @@
 // recover db
-const { DataTypes, db } = require('../utils/database.util');
+const { db, DataTypes } = require('../utils/database.util');
 
 // create model
-const Club = db.define('club', {
+const League = db.define('league', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false // don't has be null
     },
+    adminId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     name: {
-        type: DataTypes.STRING(20),
-        allowNull: false
-    },
-    fullName: {
-        type: DataTypes.STRING(3),
-        allowNull: false
-    },
-    abbreviationName: {
-        type: DataTypes.STRING(50),
-        allowNull: false
-    },
-    foundation: {
-        type: DataTypes.DATEONLY,
-        allowNull: false
-    },
-    president: {
         type: DataTypes.STRING,
         allowNull: false
     },
     shield: {
         type: DataTypes.BLOB,
-        allowNull: true
+        allowNull: false
     },
     shieldWhite: {
         type: DataTypes.BLOB,
-        allowNull: true
+        allowNull: false
     },
     shieldBlack: {
         type: DataTypes.BLOB,
-        allowNull: true
+        allowNull: false
     },
-    delegateId: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    },
-    players: {
+    clubs: {
         type: DataTypes.ARRAY,
         allowNull: true
     },
@@ -58,4 +42,4 @@ const Club = db.define('club', {
 })
 
 // export
-module.exports = { Club };
+module.exports = { League };

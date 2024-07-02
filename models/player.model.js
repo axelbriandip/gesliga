@@ -2,7 +2,7 @@
 const { db, DataTypes } = require('../utils/database.util');
 
 // create model
-const User = db.define('user', {
+const Player = db.define('player', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -26,35 +26,42 @@ const User = db.define('user', {
         allowNull: false,
         unique: false
     },
+    license: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: false
+    },
     dateOfBirth: {
         type: DataTypes.DATEONLY,
         allowNull: false
     },
     gender: {
-        type: DataTypes.ENUM('male', 'female', 'other'),
+        type: DataTypes.ENUM('male', 'female'),
         allowNull: false
     },
-    phone: {
-        type: DataTypes.STRING(16),
+    position: {
+        type: DataTypes.STRING,
         allowNull: false
     },
     photo: {
         type: DataTypes.BLOB,
         allowNull: true
     },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+    photoDniFront: {
+        type: DataTypes.BLOB,
+        allowNull: true
     },
-    password: {
-        type: DataTypes.STRING,
+    photoDniReverse: {
+        type: DataTypes.BLOB,
+        allowNull: true
+    },
+    photoMedicalCertificate: {
+        type: DataTypes.BLOB,
+        allowNull: true
+    },
+    clubId: {
+        type: DataTypes.INTEGER,
         allowNull: false
-    },
-    role: {
-        type: DataTypes.ENUM('admin', 'delegate', 'discipline', 'guest'),
-        allowNull: false,
-        defaultValue: 'guest'
     },
     isActive: {
         type: DataTypes.BOOLEAN,
@@ -65,4 +72,4 @@ const User = db.define('user', {
 })
 
 // export
-module.exports = { User };
+module.exports = { Player };

@@ -26,7 +26,8 @@ const startServer = async () => {
         initModels();
         
         // sync db
-        await db.sync({ force: true }); // Sincroniza las tablas, { force: true } borra y recrea las tablas en cada inicio
+        await db.sync();
+        // { force: true } borra y recrea las tablas en cada inicio
         console.log('Database synced successfully.');
 
         // set server to listen
@@ -42,13 +43,14 @@ const startServer = async () => {
     }
 }
 
-// catch not-existings endpoints
-app.all('*', (req, res) => {
-    res.status(404).json({
-        status: 'error',
-        message: `${req.method} ${req.url} does not exists in our server!`,
+    // catch not-existings endpoints
+    app.all('*', (req, res) => {
+        res.status(404).json({
+            status: 'error',
+            message: `${req.method} ${req.url} does not exists in our server222`,
+        });
     });
-});
+
 
 // call start server
 startServer();
