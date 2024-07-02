@@ -46,7 +46,7 @@ const Club = db.define('club', {
         allowNull: true
     },
     players: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: true
     },
     isActive: {

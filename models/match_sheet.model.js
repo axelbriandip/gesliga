@@ -26,7 +26,7 @@ const matchSheet = db.define('matchSheet', {
         allowNull: false
     },
     players: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: false
     },
     isActive: {

@@ -30,7 +30,7 @@ const League = db.define('league', {
         allowNull: false
     },
     clubs: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: true
     },
     isActive: {
