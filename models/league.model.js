@@ -9,7 +9,7 @@ const League = db.define('league', {
         autoIncrement: true,
         allowNull: false // don't has be null
     },
-    adminId: {
+    userId: {
         type: DataTypes.INTEGER,
         allowNull: false
     },

@@ -29,7 +29,7 @@ const Pass = db.define('pass', {
         type: DataTypes.BLOB,
         allowNull: false
     },
-    loan: {
+    loanId: {
         type: DataTypes.INTEGER,
         allowNull: true
     },

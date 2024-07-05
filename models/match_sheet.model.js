@@ -2,7 +2,7 @@
 const { db, DataTypes } = require('../utils/database.util');
 
 // create model
-const matchSheet = db.define('matchSheet', {
+const MatchSheet = db.define('matchSheet', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -38,4 +38,4 @@ const matchSheet = db.define('matchSheet', {
 })
 
 // export
-module.exports = { matchSheet };
+module.exports = { MatchSheet };
