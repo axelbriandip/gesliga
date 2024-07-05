@@ -15,36 +15,32 @@ const getAllUsers = async(req, res, next) => {
 const createUser = async(req, res, next) => {
     // receive data
     const {
-        role,
-        first_name,
-        second_name,
-        first_lastname,
-        second_lastname,
-        gender,
+        firstName,
+        middleName,
+        lastName,
         dni,
-        birthdate,
-        nationality,
+        dateOfBirth,
+        gender,
         phone,
+        // photo,
         email,
         password,
-        status
+        role
     } = req.body;
     
     // add to table
     const newUser = await User.create({
-        role,
-        first_name,
-        second_name,
-        first_lastname,
-        second_lastname,
-        gender,
+        firstName,
+        middleName,
+        lastName,
         dni,
-        birthdate,
-        nationality,
+        dateOfBirth,
+        gender,
         phone,
+        // photo,
         email,
         password,
-        status
+        role,
     })
 
     // 201 => success and a resource has been created

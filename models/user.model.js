@@ -10,21 +10,21 @@ const User = db.define('user', {
         allowNull: false // don't has be null
     },
     firstName: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING,
         allowNull: false
     },
     middleName: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING,
         allowNull: true
     },
     lastName: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING,
         allowNull: false
     },
     dni: {
-        type: DataTypes.STRING(8),
+        type: DataTypes.STRING,
         allowNull: false,
-        unique: false
+        unique: true
     },
     dateOfBirth: {
         type: DataTypes.DATEONLY,
@@ -35,13 +35,13 @@ const User = db.define('user', {
         allowNull: false
     },
     phone: {
-        type: DataTypes.STRING(16),
+        type: DataTypes.STRING,
         allowNull: false
     },
-    photo: {
-        type: DataTypes.BLOB,
-        allowNull: true
-    },
+    // photo: {
+    //     type: DataTypes.BLOB,
+    //     allowNull: true
+    // },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -53,7 +53,6 @@ const User = db.define('user', {
     },
     role: {
         type: DataTypes.ENUM('admin', 'delegate', 'discipline', 'guest'),
-        allowNull: false,
         defaultValue: 'guest'
     },
     isActive: {
