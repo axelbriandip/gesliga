@@ -28,7 +28,7 @@ const initModels = () => {
     League.belongsTo(User);
 
     // one to many
-    Club.hasMany(Player, { foreignKey: 'clubId' });
+    Club.hasMany(Player, { foreignKey: 'clubId', as: 'club' });
     Player.belongsTo(Club);
 
     // one to many
