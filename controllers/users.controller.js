@@ -50,8 +50,29 @@ const createUser = async(req, res, next) => {
     })
 };
 
+const login = async(req,res,next) => {
+    // get email and password
+    const { email, password } = req.body;
+
+    // validate if user is active
+    const user = await User.findOne({
+        where: { email, password, isActive: true }
+    });
+
+    // if users not exists or password doesn't match, send error
+    if (!user) {
+        res.status(400).json({ status: 'Wrong credentials!' })
+    }
+
+    res.status(200).json({
+        status: 'success',
+        data: { user }
+    })
+}
+
 // export controllers
 module.exports = {
     createUser,
-    getAllUsers
+    getAllUsers,
+    login
 };
