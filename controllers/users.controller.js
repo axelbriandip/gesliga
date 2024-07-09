@@ -5,18 +5,12 @@ const dotenv = require('dotenv');
 // import models
 const { User } = require('../models/user.model');
 
+// utils
+const { catchAsync } = require('../utils/catchAsync.util');
+const { AppError } = require('../utils/appError.util');
+
 // controllers: user
-const getAllUsers = async(req, res, next) => {
-    const users = await User.findAll();
-
-    // 201 => success and a resource has been created
-    res.status(201).json({
-        status: 'success',
-        data: { users }
-    })
-}
-
-const createUser = async(req, res, next) => {
+const createUser = catchAsync(async(req, res, next) => {
     // receive data
     const {
         firstName,
@@ -58,9 +52,9 @@ const createUser = async(req, res, next) => {
         status: 'success',
         data: { newUser }
     })
-};
+});
 
-const login = async(req,res,next) => {
+const login = catchAsync(async(req,res,next) => {
     // get email and password
     const { email, password } = req.body;
 
@@ -71,7 +65,7 @@ const login = async(req,res,next) => {
 
     // if users not exists or password doesn't match, send error
     if ( !user || !(await bcrypt.compare(password, user.password)) ) {
-        res.status(400).json({ status: 'Wrong credentials!' })
+        return next(new AppError('Wrong credentials', 400))
     }
 
     // remove password for response
@@ -81,7 +75,17 @@ const login = async(req,res,next) => {
         status: 'success',
         data: { user }
     })
-}
+});
+
+const getAllUsers = catchAsync(async(req, res, next) => {
+    const users = await User.findAll();
+
+    // 201 => success and a resource has been created
+    res.status(201).json({
+        status: 'success',
+        data: { users }
+    })
+})
 
 // export controllers
 module.exports = {
