@@ -1,8 +1,8 @@
 // imports
 const express = require('express');
 const dotenv = require('dotenv');
-const { db } = require('./utils/database.util');
-const { usersRouter } = require('./routes/users.routes');
+const { db } = require('./server/utils/database.util');
+const { usersRouter } = require('./server/routes/users.routes');
 const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -10,10 +10,10 @@ const morgan = require('morgan');
 dotenv.config({ path: './config.env' });
 
 // utils
-const { initModels } = require('./models/initModels');
+const { initModels } = require('./server/models/initModels');
 
 // controllers
-const { globalErrorHandler } = require('./controllers/error.controller');
+const { globalErrorHandler } = require('./server/controllers/error.controller');
 
 
 const app = express();
