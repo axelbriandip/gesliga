@@ -3,17 +3,31 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { db } = require('./utils/database.util');
 const { usersRouter } = require('./routes/users.routes');
+const helmet = require('helmet');
+const compression = require('compression');
+const morgan = require('morgan');
+
+dotenv.config({ path: './config.env' });
 
 // utils
 const { initModels } = require('./models/initModels');
 
-dotenv.config();
+// controllers
+const { globalErrorHandler } = require('./controllers/error.controller');
+
 
 const app = express();
 app.use(express.json());
 
-// routes
+// endpoints
 app.use('/api/v1/users', usersRouter);
+
+app.use(helmet());
+app.use(compression());
+app.use(globalErrorHandler);
+
+if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+else if (process.env.NODE_ENV === 'production') app.use(morgan('combined'));
 
 // start server
 const startServer = async () => {

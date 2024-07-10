@@ -8,13 +8,16 @@ const {
     login
 } = require('../controllers/users.controller');
 
+// middlewares
+const { userExists } = require('../middlewares/users.middlewares');
+
 // create router
 const usersRouter = express.Router();
 
 // actions/routers
 usersRouter.post('/', createUser);
-usersRouter.get('/', getAllUsers);
 usersRouter.post('/login', login);
+usersRouter.get('/', getAllUsers);
 
 
 // export routers/actions
