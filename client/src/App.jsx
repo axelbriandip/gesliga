@@ -1,4 +1,6 @@
+// imports
 import './assets/styles/index.css';
+import {} from './pages/index';
 
 function App() {
 
