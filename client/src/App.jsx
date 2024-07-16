@@ -1,13 +1,13 @@
 // imports
 import './assets/styles/index.css';
-import {} from './pages/index';
+import LoginPage from "./pages/LoginPage";
 
 function App() {
 
   return (
-    <>
-    <h1>hello</h1>
-    </>
+    <div className="App">
+      <LoginPage/>
+    </div>
   )
 }
 

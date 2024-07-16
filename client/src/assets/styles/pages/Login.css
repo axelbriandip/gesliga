@@ -1,0 +1,66 @@
+@import url('../index.css');
+
+.contentLogin {
+    padding: 3rem 0;
+}
+
+.contentLogin .cardLogin {
+    background-color: var(--color-background-white);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    width: 22rem;
+    margin: auto;
+    box-shadow: var(--box-shadow);
+}
+
+.contentLogin .cardLogin h2 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.contentLogin .cardLogin h2 span {
+    color: var(--color-text-secondary);
+}
+
+.contentLogin .cardLogin .cardLogin__hdr {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contentLogin .cardLogin span {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+}
+
+.contentLogin .cardLogin__frm form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contentLogin .cardLogin__frm form .input-group {
+    display: flex;
+    gap: .2rem;
+    flex-direction: column;
+}
+
+.contentLogin .cardLogin__frm form .input-group input {
+    height: 1.5rem;
+    outline: none;
+}
+
+.contentLogin .cardLogin__frm form .input-group a {
+    color: var(--color-text-secondary);
+}
+
+.contentLogin .cardLogin__frm form .input-group button {
+    height: 2rem;
+    color: var(--color-accent);
+    background-color: var(--color-primary);
+    margin: 1rem 0;
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+}
