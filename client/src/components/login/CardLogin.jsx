@@ -1,6 +1,13 @@
 // import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 const CardLogin = () => {
+    const navigate = useNavigate();
+
+    const doLogin = () => {
+        navigate("/signup")
+    }
+    
     return (
         <article className="cardLogin">
             <div className="cardLogin__hdr">
@@ -8,14 +15,14 @@ const CardLogin = () => {
                 <span>Log in to your account</span>
             </div>
             <div className="cardLogin__frm">
-                <form action="">
+                <form action="" onSubmit={doLogin}>
                     <div className="input-group">
                         <label htmlFor="">Email</label>
-                        <input type="text" />
+                        <input type="text" placeholder="Ingresar email"/>
                     </div>
                     <div className="input-group">
                         <label htmlFor="">Password</label>
-                        <input type="password" />
+                        <input type="password" placeholder="Ingresar contraseña"/>
                     </div>
                     <div className="input-group">
                         <a href="">Forgot yur password?</a>

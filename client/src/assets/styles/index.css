@@ -3,6 +3,7 @@
 @import url('./utils/variables.css');
 
 /* components */
+@import url('./components/Footer.css');
 
 /* pages */
 @import url('./pages/Login.css');
@@ -12,4 +13,16 @@ html {
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     color: var(--color-text-primary);
+}
+
+/* Cambia el color de fondo y el color del texto cuando se selecciona */
+::selection {
+    background: var(--color-secondary); /* Color de fondo al seleccionar */
+    color: var(--color-primary); /* Color del texto al seleccionar */
+}
+
+/* Para navegadores Webkit (como Chrome y Safari) */
+::-webkit-selection {
+    background: var(--color-secondary); /* Color de fondo al seleccionar */
+    color: var(--color-primary); /* Color del texto al seleccionar */
 }

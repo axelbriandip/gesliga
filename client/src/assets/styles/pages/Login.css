@@ -48,8 +48,9 @@
 }
 
 .contentLogin .cardLogin__frm form .input-group input {
-    height: 1.5rem;
+    height: 1.3rem;
     outline: none;
+    padding: .3rem;
 }
 
 .contentLogin .cardLogin__frm form .input-group a {
@@ -63,4 +64,10 @@
     margin: 1rem 0;
     cursor: pointer;
     font-weight: var(--font-weight-bold);
+    border: none;
+}
+
+.contentLogin .cardLogin__frm form .input-group button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }

@@ -2,6 +2,7 @@
 import CardLogin from "../components/login/CardLogin";
 
 const LoginPage = () => {
+
     return (
         <section className="contentLogin">
             <CardLogin/>
